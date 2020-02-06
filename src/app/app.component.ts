@@ -16,7 +16,7 @@ export interface City {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss', './app.global.scss']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
 
@@ -68,42 +68,42 @@ export class AppComponent {
       }
   }
 
-  editCity(name: string) {
-    const querySelector: string = '#' + name + ' .cities__menu__item__changes';
-    if (document.querySelector(querySelector).style.display !== 'block') {
-      document.querySelector(querySelector).style.display = 'block';
-    } else {
-      document.querySelector(querySelector).style.display = 'none';
-    }
-  }
+  // editCity(name: string) {
+  //   const querySelector: string = '#' + name + ' .cities__menu__item__changes';
+  //   if (document.querySelector(querySelector).style.display !== 'block') {
+  //     document.querySelector(querySelector).style.display = 'block';
+  //   } else {
+  //     document.querySelector(querySelector).style.display = 'none';
+  //   }
+  // }
 
-  intentionAddCity() {
-    if (document.querySelector('.form_add_city_open').style.display !== 'block') {
-      document.querySelector('.form_add_city_open').style.display = 'block';
-      document.querySelector('.button_add_city').style.display = 'none';
-      document.getElementById('city__new_input').value = '';
-      document.getElementById('city__new_textarea').value = '';
-    } else {
-      document.querySelector('.form_add_city_open').style.display = 'none';
-      document.querySelector('.button_add_city').style.display = 'block';
-    }
-  }
+  // intentionAddCity() {
+  //   if (document.querySelector('.form_add_city_open').style.display !== 'block') {
+  //     document.querySelector('.form_add_city_open').style.display = 'block';
+  //     document.querySelector('.button_add_city').style.display = 'none';
+  //     document.getElementById('city__new_input').value = '';
+  //     document.getElementById('city__new_textarea').value = '';
+  //   } else {
+  //     document.querySelector('.form_add_city_open').style.display = 'none';
+  //     document.querySelector('.button_add_city').style.display = 'block';
+  //   }
+  // }
 
-  addCity() {
-    const newTitle = document.getElementById('city__new_input').value;
-    const newDesc = document.getElementById('city__new_textarea').value;
-    const countryCurrentStr = document.querySelector('.country__menu__item_current').id;
-
-    const newContry: City = {
-      id: this.cities.length + 1,
-      country_id: Number(countryCurrentStr.slice(7, countryCurrentStr.length)),
-      title: newTitle,
-      desc: newDesc
-    };
-
-    this.cities.push(newContry);
-    this.intentionAddCity();
-  }
+  // addCity() {
+  //   const newTitle = document.getElementById('city__new_input').value;
+  //   const newDesc = document.getElementById('city__new_textarea').value;
+  //   const countryCurrentStr = document.querySelector('.country__menu__item_current').id;
+  //
+  //   const newContry: City = {
+  //     id: this.cities.length + 1,
+  //     country_id: Number(countryCurrentStr.slice(7, countryCurrentStr.length)),
+  //     title: newTitle,
+  //     desc: newDesc
+  //   };
+  //
+  //   this.cities.push(newContry);
+  //   this.intentionAddCity();
+  // }
 
   editTitle(id: number, event: any) {
     this.cities[id].title = event.target.value;
