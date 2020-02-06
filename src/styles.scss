@@ -4,6 +4,24 @@
   color: #4d4d4d;
 }
 
+h2{
+  margin: 0;
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+h3{
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+p{
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+}
+
 .container{
   max-width: 1140px;
   margin: 0 auto;
@@ -26,26 +44,4 @@
 .icon__delete{
   width: 32px;
   height: 30px;
-}
-
-@media all and (max-width: 768px){
-  .container{
-    padding: 0 15px;
-  }
-
-  .country-page > div{
-    flex-direction: column;
-  }
-
-  .country-page > div > *{
-    padding-top: 30px;
-  }
-
-  .country-page > div > *:first-child{
-    padding-top: 0;
-  }
-
-  .icon{
-    padding: 0 5px;
-  }
 }

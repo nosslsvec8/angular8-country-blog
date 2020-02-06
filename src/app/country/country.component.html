@@ -1,0 +1,16 @@
+<section class="country">
+  <h2>Countries</h2>
+  <div class="country__menu" *ngFor="let country_item of country">
+    <div
+         id="{{country_item.id}}"
+         [className]="(getCurrentCountry() == country_item.id)
+             ? 'country__menu__item country__menu__item_current'
+             : 'country__menu__item'"
+         (click)="updateCurrentCountry(country_item.id);"
+    >
+      <h3>{{country_item.title}}</h3>
+      <p>{{country_item.text}}</p>
+    </div>
+
+  </div>
+</section>

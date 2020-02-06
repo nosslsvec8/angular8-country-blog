@@ -2,90 +2,9 @@
 
 <main class="country-page">
   <div class="container">
+    <app-country></app-country>
 
-    <section class="country">
-      <h2>Countries</h2>
-      <div class="country__menu"
-            *ngFor="let country_item of country; let i = index">
-
-        <div class="country__menu__item" id="country{{country_item.id}}"
-             (click)="clickCountryMenu(country_item.id, 'country'+country_item.id)"
-             *ngIf="i >= 1; else item_current">
-          <h3>{{country_item.title}}</h3>
-          <p>{{country_item.text}}</p>
-        </div>
-
-        <ng-template #item_current>
-          <div class="country__menu__item country__menu__item_current" id="country{{country_item.id}}"
-               (click)="clickCountryMenu(country_item.id, 'country'+country_item.id)">
-            <h3>{{country_item.title}}</h3>
-            <p>{{country_item.text}}</p>
-          </div>
-        </ng-template>
-
-      </div>
-    </section>
-
-    <section class="cities">
-      <h2>Cities</h2>
-      <div class="cities__menu">
-        <div class="cities__menu__item form_add_city">
-          <button class="button_add_city" (click)="intentionAddCity()">+ Add city</button>
-
-          <div class="form_add_city_open">
-            <h3>Add city</h3>
-            <div>
-              <input type="text" placeholder="City name..."  id="city__new_input">
-            </div>
-            <div>
-              <textarea name="" cols="30" rows="10"
-                        placeholder="Description of the city..."
-                        id="city__new_textarea"
-              ></textarea>
-            </div>
-            <button (click)="addCity()">Submit</button>
-            <button class="button__cancel" (click)="intentionAddCity()">Cancel</button>
-          </div>
-        </div>
-
-        <ng-container *ngFor="let city_item of cities">
-          <div class="cities__menu__item" id="city{{city_item.id}}"
-               *ngIf="city_item.country_id == 1"
-          >
-            <div class="cities__menu__item__main_info">
-              <h3>{{city_item.title}}</h3>
-              <p *ngIf="city_item.desc != ''; else emptyCity">{{city_item.desc}}</p>
-
-              <ng-template #emptyCity>
-                <p>This city is currently without a description.</p>
-              </ng-template>
-
-              <div class="cities__menu__item__changes">
-                <div>
-                  <label>Edit title: &nbsp;</label>
-                  <input name="title" type="text" (input)="editTitle(city_item.id-1 ,$event)" [value]="city_item.title">
-                </div>
-                <div>
-                  <label>Edit desc:</label>
-                  <input type="text" (input)="editDesc(city_item.id-1 ,$event)" [value]="city_item.desc">
-                </div>
-              </div>
-
-            </div>
-            <div class="cities__menu__item__buttons">
-              <button class="icon icon__add" (click)="editCity('city'+city_item.id)">
-                <img src="../../assets/image/edit.svg" alt="Edit city" title="Edit city">
-              </button>
-              <button class="icon icon__delete" (click)="deleteCity(city_item.id)">
-                <img src="../../assets/image/trash.svg" alt="Delete city" title="Delete city">
-              </button>
-            </div>
-          </div>
-        </ng-container>
-
-      </div>
-    </section>
-
+    <app-city></app-city>
   </div>
 </main>
 

@@ -1,0 +1,39 @@
+.country{
+
+  & h3{
+    color: #0072bc;
+    padding-bottom: 5px;
+  }
+
+  & .country__menu__item{
+    background-color: #f0f0f0;
+    padding: 18px 15px 15px;
+    margin: 3px 0;
+
+    &:hover{
+      background-color: #0072bc;
+      cursor: pointer;
+
+      & h3{
+        color: #fff;
+      }
+
+      & p{
+        color: #fff;
+      }
+    }
+
+  }
+
+  & .country__menu__item.country__menu__item_current{
+    background-color: #0072bc;
+
+    & h3{
+      color: #fff;
+    }
+
+    & p{
+      color: #fff;
+    }
+  }
+}
